@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<main role="main" class="probootstrap-main js-probootstrap-main">
+    <div class="probootstrap-bar">
+        <a href="#" class="probootstrap-toggle js-probootstrap-toggle"><span class="oi oi-menu"></span></a>
+        <div class="probootstrap-main-site-logo"><a href="" {{ "/home.html" | prepend: site.baseurl }}">Home</a></a></div>
+    </div>
+    <div class="
+                card-columns">
+
+
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+
+                </div>
+                {% for post in site.posts %}
+                <div class="card">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                    {% if post.header-img %}
+                    <img class="card-img-top probootstrap-animate" src="{{ "/assets/" | {{ prepend: site.baseurl }}{{post.header-img}}"
+                        alt="Card image cap">
+                    {% else %}
+                    <img class="card-img-top probootstrap-animate" src="{{ "/assets/images/img_1.jpg" | {{ prepend: site.baseurl }}"
+                        alt="Card image cap">
+                    {% endif %}
+                    <div class="card-body">
+                       
+                        <p class="card-text">{{ post.subtitle }}</p>
+                        <a href="{{ site.baseurl }}{{ post.url }}" class="btn btn-primary">查看</a>
+                    </div>
+
+                </div>
+                {% endfor %}
+        </div>
+
+</main>

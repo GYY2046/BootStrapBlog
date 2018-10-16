@@ -1,0 +1,15 @@
+<div class="user-details">
+  <h1> 文章列表 </h1>
+</div>
+<div class="user-projects">
+  {% for post in site.posts %} 
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top"  src="{{ "/assets/img/skate.jpg" | prepend: site.baseurl }}"  alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ post.title }}</h5>
+      <p class="card-text">内容简介</p>
+      <a href="{{ site.baseurl }}{{ post.url }}"  class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
